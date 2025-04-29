@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/master/qrcode.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script src="../Qr.js"></script>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+
+  <div class="container">
+    <label for="text-input">Enter your message:</label>
+    <input type="text" id="text-input" placeholder="Type your message here...">
+    <button id="generate-text-btn">Generate Text QR Code</button>
+
+    <label for="image-input">Or upload an image:</label>
+    <input type="file" id="image-input" accept="image/*">
+    <button id="generate-image-btn">Generate Image QR Code</button>
+
+    <div class="loading" id="loading">Generating QR Code...</div>
+  </div>
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal">×</button>
+      <div id="qrcode-container"></div>
+
+      <div class="scanned-message">
+        <div class="image-label" id="image-label" style="display: none;">📷 Scanned Image Content:</div>
+        <div class="scanned-text" id="scanned-text"></div>
+        <img src="" class="scanned-image" id="scanned-image" style="display: none;">
+      </div>
+
+      <p style="margin-top: 20px; color: #718096;">Scan this QR code to see the message above</p>
+    </div>
+  </div>
+</body>
+</html>
