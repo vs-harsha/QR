@@ -4,10 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>QR Code Generator</title>
-  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/master/qrcode.min.js"></script>
+
+  <!-- Use a maintained CDN for qrcodejs -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js" defer></script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
-<script src="../Qr.js"></script>
+
+  <!-- If style.css is in the same folder as index.html, use this: -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Your app JS (defer so DOM is ready) -->
+  <script src="Qr.js" defer></script>
 </head>
 <body>
   <h1>QR Code Generator</h1>
@@ -21,10 +28,10 @@
     <input type="file" id="image-input" accept="image/*">
     <button id="generate-image-btn">Generate Image QR Code</button>
 
-    <div class="loading" id="loading">Generating QR Code...</div>
+    <div class="loading" id="loading" style="display:none;">Generating QR Code...</div>
   </div>
 
-  <div class="modal-overlay" id="modal">
+  <div class="modal-overlay" id="modal" style="display:none;">
     <div class="modal-content">
       <button class="close-btn" id="close-modal">×</button>
       <div id="qrcode-container"></div>
